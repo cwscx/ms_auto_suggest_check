@@ -31,11 +31,13 @@ if __name__ == "__main__":
 	# 1. Make -C [PA_dir] clean
 	# 2. rename [PA_dir]/Makefile -> [PA_dir]/Makefile_cp
 	# 3. cp [AS]/Makefile -> [PA_dir]/Makefile
-	# 4. Make -C [PA_dir]
-	# 5. [PA_dir]/predict min_size step_size iter_time dict_name + word + num_completion > 2
-	# 6. Make -C [PA_dir] clean
-	# 7. rm [PA_dir]/Makefile
-	# 8. mv [PA_dir]/Makefile_cp [PA_dir]/Makefile
+	# 4. cp [AS]/predict.cpp -> [PA_dir]/predict.cpp
+	# 5. Make -C [PA_dir]
+	# 6. [PA_dir]/predict min_size step_size iter_time dict_name + word + num_completion > 2
+	# 7. Make -C [PA_dir] clean
+	# 8. rm [PA_dir]/Makefile
+	# 9. mv [PA_dir]/Makefile_cp [PA_dir]/Makefile
+	# 10. rm [PA_dir]/predict.cpp
 	pa_path = config_dict["pa_absolute_dir"]
 	pa_makefile_path = pa_path + "/Makefile"
 	
@@ -47,6 +49,9 @@ if __name__ == "__main__":
 
 	cp_new_makefile = "cp Makefile " + pa_path
 	os.system(cp_new_makefile)
+
+	cp_predict = "cp predict.cpp " + pa_path
+	os.system(cp_predict)
 
 	make_predict = "make -C " + pa_path
 	os.system(make_predict)
@@ -64,6 +69,9 @@ if __name__ == "__main__":
 
 	restore_makefile = "mv " + pa_makefile_path + "_cp " + pa_makefile_path
 	os.system(restore_makefile)
+
+	rm_predict = "rm " + pa_path + "/predict.cpp"
+	os.system(rm_predict)
 
 	diff_outcomes = "diff 1 2"
 	os.system(diff_outcomes)
