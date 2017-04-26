@@ -19,5 +19,5 @@ util.o: util.hpp
 
 
 clean:
-	rm -f benchtrie *.o core* *~
+	rm -f predict *.o core* *~
 

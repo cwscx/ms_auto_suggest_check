@@ -1,0 +1,8 @@
+ms_key :	9811d7f7b99a441babfa6c4531a7a993
+pa_absolute_dir :	/Users/ShengyangShi/OneDrive/UCSD/Courses/2016-2017/2017_Spring/Tutor_CSE_100/MS_spell_check/sol
+min_size :	10000
+step_size :	1000
+iter_time :	1000
+dict_absolute_dir :	/Users/ShengyangShi/OneDrive/UCSD/Courses/2016-2017/2017_Spring/Tutor_CSE_100/MS_spell_check/sol/input-files/shuffled_freq_dict.txt
+word :	bi
+num_completion :	20

@@ -1,13 +1,18 @@
 from autoSuggestion import *
 
-import ast
+import sys
 
 if __name__ == "__main__":
-    ms_auto_suggestion = autoSuggestion("9811d7f7b99a441babfa6c4531a7a993")
-    
-    suggestionResponse = ms_auto_suggestion.getSuggestion("bill g")
-    suggestions = suggestionResponse.get("suggestionGroups")[0].get("searchSuggestions")
+	if len(sys.argv) < 3:
+		print("Error: number of input is not correct")
+		print("\t 1:The Microsoft key")
+		print("\t 2:The word want to get auto suggestion")
+		sys.exit(-1)
 
-    outcomes = [s.get("displayText") for s in suggestions]
+	ms_auto_suggestion = autoSuggestion(sys.argv[1])
 
-    print outcomes
+	suggestionResponse = ms_auto_suggestion.getSuggestion(sys.argv[2])
+	suggestions = suggestionResponse.get("suggestionGroups")[0].get("searchSuggestions")
+	outcomes = [s.get("displayText") for s in suggestions]
+
+	print outcomes
