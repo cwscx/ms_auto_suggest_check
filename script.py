@@ -64,3 +64,6 @@ if __name__ == "__main__":
 
 	restore_makefile = "mv " + pa_makefile_path + "_cp " + pa_makefile_path
 	os.system(restore_makefile)
+
+	diff_outcomes = "diff 1 2"
+	os.system(diff_outcomes)

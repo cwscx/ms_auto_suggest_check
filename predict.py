@@ -15,4 +15,5 @@ if __name__ == "__main__":
 	suggestions = suggestionResponse.get("suggestionGroups")[0].get("searchSuggestions")
 	outcomes = [s.get("displayText") for s in suggestions]
 
-	print outcomes
+	for s in outcomes:
+		print s
